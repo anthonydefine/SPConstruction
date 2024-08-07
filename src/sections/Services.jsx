@@ -6,6 +6,7 @@ import roof from '../assets/services/roof.jpeg'
 import garagefloor from '../assets/services/garagefloor.jpeg'
 import windows from '../assets/services/windows.jpeg'
 import siding from '../assets/services/siding.jpeg'
+import QuoteModal from '../modals/QuoteModal'
 
 const servicesArr = [
   {id: 1, title: "Roofing Excellence", desc: "Ensure the safety and longevity of your home with our premium roofing solutions. Our expert team guarantees durable and stylish roofs that stand the test of time.", img: roof},
@@ -22,7 +23,9 @@ const Services = () => {
       <div className='my-6 flex flex-col justify-center gap-2'>
         <h2 className='text-6xl font-bold text-center'>Our Popular Services</h2>
         <p className='md:px-24 text-center font-light my-2'>Explore our most sought-after services designed to enhance your home. Whether it's durable roofing, elegant patios, or energy-efficient windows, we bring quality craftsmanship to every project. Trust Spire Point Construction to deliver style and functionality that lasts.</p>
-        <Button className='mx-auto'>Start a Project</Button>
+        <span className='text-center mx-auto'>
+          <QuoteModal buttonText='Start a Project' />
+        </span>
       </div>
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mx-auto'>
         {servicesArr.map((service) => (

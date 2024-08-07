@@ -4,7 +4,7 @@ import { useState } from 'react';
 import SubmitAlert from '../components/SubmitAlert';
 import { BsCheckCircleFill } from "react-icons/bs";
 
-const QuoteModal = ({ buttonText }) => {
+const QuoteModal = ({ buttonText, buttonSize }) => {
   const [openModal, setOpenModal] = useState(false);
   const [email, setEmail] = useState('');
   const [fullName, setFullName] = useState('');
@@ -36,7 +36,7 @@ const QuoteModal = ({ buttonText }) => {
           Your message has been submitted successfully! Someone from our team will be in touch shortly.
         </Alert>
       )}
-      <Button onClick={() => setOpenModal(true)}>{buttonText}</Button>
+      <Button onClick={() => setOpenModal(true)} size={buttonSize}>{buttonText}</Button>
       <Modal dismissible show={openModal} size="2xl" onClose={onCloseModal} popup>
         <Modal.Header />
         <Modal.Body>

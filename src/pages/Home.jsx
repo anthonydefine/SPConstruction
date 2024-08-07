@@ -8,8 +8,8 @@ import Services from '../sections/Services';
 const HeroSection = () => {
   return (
     <>
-      <div className="flex flex-col lg:flex-row min-h-screen bg-slate-50">
-        <div className="flex flex-grow items-center justify-center w-full h-full relative px-6 py-32 lg:py-48 text-center lg:text-left lg:w-2/3">
+      <div className="flex flex-col lg:flex-row md:min-h-screen bg-slate-50">
+        <div className="flex flex-grow items-center justify-center w-full h-full relative px-6 py-24 lg:py-48 text-center lg:text-left lg:w-2/3">
           <div className="relative z-10 mx-auto max-w-2xl">
             <div className="hidden sm:mb-8 sm:flex sm:justify-center">
               <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-slate-900 ring-1 ring-gray-700 hover:ring-gray-500">
