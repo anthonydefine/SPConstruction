@@ -1,13 +1,18 @@
 import React from 'react';
-import { Banner } from 'flowbite-react';
-import { BsTelephoneForward } from 'react-icons/bs';
+import { motion } from "framer-motion";
+import { Banner, Button } from 'flowbite-react';
+import { BsTelephoneForward, BsChatRightDots } from 'react-icons/bs';
 import { HiX } from "react-icons/hi";
 import { MdAnnouncement } from "react-icons/md";
 import heroroofer from '../assets/hero-roofer.png'; // Adjust the path to your image
 import QuoteModal from '../modals/QuoteModal';
 import AboutUsModal from '../modals/AboutUsModal';
+import ContactForm from '../components/ContactForm';
 import LogoCloud from '../components/LogoCloud';
 import Services from '../sections/Services';
+
+const phoneNumber = '3308001270'; // Replace with your desired phone number
+  const message = 'Hello, I am interested in your services.';
 
 const HeroSection = () => {
   return (
@@ -33,47 +38,67 @@ const HeroSection = () => {
           </Banner.CollapseButton>
         </div>
       </Banner>
-      <section id='home' className="relative flex flex-col lg:flex-row text-slate-50">
-  {/* Overlay for the image */}
-  <div className="absolute inset-0 hidden lg:block">
-    <div className="relative w-full h-full">
-      <img
-        src={heroroofer}
-        alt="Hero"
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-black opacity-50 rounded-lg" />
-    </div>
-  </div>
-
-  <div className="flex flex-grow items-center justify-center w-full h-full relative px-6 py-24 lg:py-48 text-center lg:text-left lg:w-2/3">
-    <div className="relative z-10 mx-auto max-w-2xl">
-      <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-        Spire Point Construction
-      </h1>
-      <p className="mt-6 text-lg leading-8 text-slate-300 indent-3">
-        With over <strong>15 years</strong> of industry experience, our mission is to deliver exceptional quality in roofing, siding, and all exterior projects. We are dedicated to building lasting relationships through integrity, craftsmanship, and innovative solutions that enhance the value and beauty of every property we touch.
-      </p>
-      <div className="mt-10 flex items-center justify-center gap-x-6">
-        <QuoteModal buttonText='Start a Project' />
-        <AboutUsModal visual='hero' />
-      </div>
-    </div>
-  </div>
-
-  {/* Hide the image on small screens and show it on large screens */}
-  <div className="absolute inset-0 lg:hidden">
-    <div className="relative w-full h-full">
-      <img
-        src={heroroofer}
-        alt="Hero"
-        className="w-full h-full object-cover rounded-lg"
-      />
-      <div className="absolute inset-0 bg-black opacity-50 rounded-lg" />
-    </div>
-  </div>
-</section>
-
+      <section id="home" className="relative flex flex-col lg:flex-row text-slate-50">
+        {/* Overlay for the image */}
+        <div className="absolute inset-0">
+          <div className="relative w-full h-full">
+            <img src={heroroofer} alt="Hero" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-black opacity-50" />
+          </div>
+        </div>
+        <div className="flex w-full">
+          <motion.div
+            className="flex flex-grow items-center justify-center w-full h-full relative px-6 py-24 lg:py-48 text-center lg:text-left lg:w-2/3"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+          >
+            <div className="relative z-10 mx-auto max-w-2xl">
+              <motion.h1
+                className="text-4xl font-bold tracking-tight sm:text-6xl"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+              >
+                Spire Point Construction
+              </motion.h1>
+              <motion.p
+                className="mt-6 text-lg leading-8 text-slate-300 indent-3"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.5 }}
+              >
+                With over <strong>15 years</strong> of industry experience, our mission is to deliver exceptional quality in roofing, siding, and all exterior projects. We are dedicated to building lasting relationships through integrity, craftsmanship, and innovative solutions that enhance the value and beauty of every property we touch.
+              </motion.p>
+              <motion.div
+                className="mt-10 flex items-center justify-center gap-x-6"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.7 }}
+              >
+                <span className="lg:hidden">
+                  <QuoteModal buttonText="Start a Project" />
+                </span>
+                <a className="hidden lg:block" href={`sms:${phoneNumber}?&body=${encodeURIComponent(message)}`}>
+                  <Button>
+                    <BsChatRightDots className="mr-2 h-4 w-4" />
+                    Send us a message
+                  </Button>
+                </a>
+                <AboutUsModal visual="hero" />
+              </motion.div>
+            </div>
+          </motion.div>
+          <motion.div 
+            className="hidden lg:flex lg:w-1/3 lg:my-6 lg:mr-2 p-6 rounded-lg relative items-center justify-center bg-slate-300"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.9 }}
+          >
+            <ContactForm />
+          </motion.div>
+        </div>
+      </section>
       <LogoCloud />
       <section id='services'>
         <Services />

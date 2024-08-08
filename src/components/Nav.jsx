@@ -15,18 +15,18 @@ const Nav = () => {
         </Navbar.Brand>
         <div className="flex items-center md:order-2 space-x-4">
           <span className='hidden lg:block'>
-            <QuoteModal buttonText='Get Quote' buttonSize='md' />
+            <QuoteModal buttonText='Free Quote' buttonSize='md' />
           </span>
           <span className='block lg:hidden'>
-            <QuoteModal buttonText='Get Quote' buttonSize='xs' />
+            <QuoteModal buttonText='Free Quote' buttonSize='xs' />
           </span>
           <a
-            href="tel:330-800-1279"
+            href="tel:330-800-1270"
             className="hidden lg:inline-flex items-center border border-transparent px-4 py-2 text-sm font-semibold text-slate-900 rounded-md shadow-sm hover:border hover:border-black"
           >
             <BsTelephoneForward className="mr-2 h-5 w-5" />
             <span className='hidden md:block font-bold'>
-              330-800-1279
+              330-800-1270
             </span>
           </a>
           <Navbar.Toggle />
