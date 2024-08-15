@@ -9,7 +9,7 @@ const Nav = () => {
     <div className="relative w-full overflow-hidden shadow-lg">
       <Navbar id='navbar' fluid className="sticky top-0 bg-slate-50 text-slate-900 shadow-xl z-10 w-full border-b-2">
         <Navbar.Brand>
-          <span className="self-center whitespace-nowrap md:text-xl font-semibold dark:text-white">
+          <span className="self-center whitespace-nowrap text-xs md:text-xl font-semibold dark:text-white">
             Spire Point Construction
           </span>
         </Navbar.Brand>

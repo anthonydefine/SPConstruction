@@ -25,10 +25,10 @@ const HeroSection = () => {
               <span className="[&_p]:inline text-xs">
                 Ready to get in touch with our team directly?&nbsp;
                 <a
-                  href="tel:330-800-1279"
+                  href="tel:330-800-1270"
                   className="inline font-medium text-cyan-600 underline decoration-solid underline-offset-2 hover:no-underline dark:text-cyan-500"
                 >
-                  330-800-1279
+                  330-800-1270
                 </a>
               </span>
             </p>
