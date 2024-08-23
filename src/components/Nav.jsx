@@ -3,12 +3,14 @@ import { Button, Navbar } from "flowbite-react";
 import { BsTelephoneForward } from "react-icons/bs";
 import QuoteModal from '../modals/QuoteModal';
 import AboutUsModal from '../modals/AboutUsModal';
+import navlogo from '../assets/mainlogo/logoshape.png';
 
 const Nav = () => {
   return (
-    <div className="relative w-full overflow-hidden shadow-lg">
+    <div className="relative w-full overflow-hidden shadow-lg rounded-lg">
       <Navbar id='navbar' fluid className="sticky top-0 bg-slate-50 text-slate-900 shadow-xl z-10 w-full border-b-2">
         <Navbar.Brand>
+          <img src={navlogo} className="mr-3 h-4 sm:h-9" alt="Flowbite React Logo" />
           <span className="self-center whitespace-nowrap text-xs md:text-xl font-semibold dark:text-white">
             Spire Point Construction
           </span>
@@ -16,9 +18,6 @@ const Nav = () => {
         <div className="flex items-center md:order-2 space-x-4">
           <span className='hidden lg:block'>
             <QuoteModal buttonText='Free Quote' buttonSize='md' />
-          </span>
-          <span className='block lg:hidden'>
-            <QuoteModal buttonText='Free Quote' buttonSize='xs' />
           </span>
           <a
             href="tel:330-800-1270"
